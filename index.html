@@ -1,7 +1,32 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <style>
+            h1 {
+                text-align: center;
+            }
+            span {
+                display: inline-block;
+                vertical-align: middle;
+                line-height: normal;
+            }
+            #status {
+                color: blue;
+                font-size: 300%;
+            }
+            div {
+                line-height: 300px;
+                text-align: center;
+            }
+        </style>
+    </head>
     <body>
-        <p>loading . . .</p>
+        <div>
+            <span>
+                <p id="message">loading . . .</p>
+            </span>
+        </div>
+
         <script>
             var done = false;
             window.onload = function(e) {
@@ -10,9 +35,8 @@
                 xmlhttp.onreadystatechange = function() {
                     var response = JSON.parse(xmlhttp.responseText);
                     var status = response.feed.entry[0]["gsx$status"]["$t"];
-                    var message = "clubhouse is " + status;
                     if (!done) {
-                        document.write(message);
+                        document.getElementById('message').innerHTML = "<h1>clubhouse is <span id=\"status\">" + status + "</span></h1>";
                         done = !done;
                     }
                 };
