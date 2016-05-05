@@ -1,0 +1,22 @@
+{
+  "name": "clubhouse-status",
+  "version": "1.0.0",
+  "description": "Today, I walked over to the clubhouse, excited to get some work done in the lovely up-and-coming maker space. When I arrived, I found the clubhouse closed!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lowellbander/clubhouse-status.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lowellbander/clubhouse-status/issues"
+  },
+  "homepage": "https://github.com/lowellbander/clubhouse-status#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
