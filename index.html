@@ -1,6 +1,24 @@
 <!DOCTYPE html>
 <html>
     <body>
-        <p>hello world</p>
+        <p>loading . . .</p>
+        <script>
+            var done = false;
+            window.onload = function(e) {
+                var xmlhttp = new XMLHttpRequest();
+                var url = "https://spreadsheets.google.com/feeds/list/1Pov13VPWkgdHdtBVBmgEpl71m_ebj623deVD89oBjKQ/1/public/values?alt=json";
+                xmlhttp.onreadystatechange = function() {
+                    var response = JSON.parse(xmlhttp.responseText);
+                    var status = response.feed.entry[0]["gsx$status"]["$t"];
+                    var message = "clubhouse is " + status;
+                    if (!done) {
+                        document.write(message);
+                        done = !done;
+                    }
+                };
+                xmlhttp.open("GET", url, true);
+                xmlhttp.send();
+            };
+        </script>
     </body>
 </html>
